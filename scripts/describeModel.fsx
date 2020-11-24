@@ -16,14 +16,14 @@ let edges = Seq.map (fun (r:bmaModel.Relationship) -> (r.FromVariable, r.ToVaria
 let incomingCount = Array.map (fun id -> Array.filter (fun (f,_) -> f=id) edges |> Array.length ) nodes
 let outgoingCount = Array.map (fun id -> Array.filter (fun (_,t) -> t=id) edges |> Array.length ) nodes
 
-let totalEdges = Array.map3 (fun i o n -> (n,i+o) ) incomingCount outgoingCount nodes
-                 |> Array.sortByDescending (fun (_,e) -> e )
+let totalEdges = Array.map3 (fun i o n -> (n,i,o,i+o) ) incomingCount outgoingCount nodes
+                 |> Array.sortByDescending (fun (_,e,_,_) -> e )
 
 
 
 //printfn "%A" names
 
-for i=0 to 5 do
-    let n,e = totalEdges.[i]
-    printfn "%-20s\t%d" names.[n] e
+for i=0 to 25 do
+    let n,t,s,e = totalEdges.[i]
+    printfn "%-20s\t%d\t(%d\t%d)" names.[n] e t s
 
