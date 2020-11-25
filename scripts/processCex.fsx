@@ -1,6 +1,7 @@
 #r "../packages/FSharp.Data/lib/net45/FSharp.Data.dll"
 open FSharp.Data
 open System.Collections.Generic
+open System.Windows.Forms
 
 type cex =  JsonProvider<"../data/output/cex_fp_example.json">
 type bmaModel = JsonProvider<"../data/models/BMAReconModel_v1_minF.json">
@@ -8,8 +9,8 @@ type bmaModel = JsonProvider<"../data/models/BMAReconModel_v1_minF.json">
 
 type metabolite = { name: string ; location: string} 
 
-let resultFile = "../data/output/proof_output_cex"
-let modelFile = "../data/models/BMAReconModel.json"
+let resultFile = "../tmp/proof_output_cex"
+let modelFile = "../data/models/BMAReconModel251120.json"
 //let originalRecon = "ReconMap-2.01-SBML3-Layout-Render.xml"
 
 let result = cex.Load(resultFile)
@@ -37,7 +38,7 @@ let reconNameLookup =
 //small molecules that are abundant
 let common = [|"atp";"h2o";"adp";"gdp";"gtp";"o2";"nadph";"nadp";"h";
                 "co2";"nad";"nadh";"nh4";"hco3";"pi";"fad";"fadh2";
-                "ppi";"na1";"o2s";"amp";"utp";"dadp";"dutp";"dgtp";"dadp";
+                "ppi";"na1";"o2s";"amp";"damp";"utp";"dadp";"dutp";"dgtp";"dadp";
                 "dcdp";"dgdp";"dudp";"dtdp";"datp";"ctp";"dctp";
                 "h2o2"|]
 
@@ -66,22 +67,29 @@ let reduction = Seq.filter idIsNotCommon instability
 reduction |> Seq.iter (fun (v:cex.Variable) ->  printfn "%s" (processID v.Id) )
 reduction |> Seq.length  |> printfn "%d variables" 
 
-let reductionID = Seq.map (fun (i:cex.Variable) -> i.Id |> int ) reduction
+let variableIDfromTimedVariable (a: string) =
+    a.Split('^').[0] |> int
+
+let reductionID = Seq.map (fun (v:cex.Variable) -> variableIDfromTimedVariable v.Id) reduction
 
 
 let reductionGraph _ = 
-    printfn "m"
     let m = Seq.filter (fun (v:bmaModel.Variable) -> Seq.exists ((=) v.Id) reductionID ) model.Model.Variables |> Array.ofSeq
-    printfn "l"
     let l = Seq.filter (fun (v:bmaModel.Variable2) -> Seq.exists ((=) v.Id) reductionID ) model.Layout.Variables |> Array.ofSeq
-    printfn "r"
     let r = Seq.filter (fun (v:bmaModel.Relationship) -> Seq.exists ((=) v.ToVariable) reductionID && Seq.exists ((=) v.FromVariable) reductionID ) model.Model.Relationships |> Array.ofSeq
     let revisedModel = bmaModel.Model(m,r)
     let revisedLayout = bmaModel.Layout(l,Array.empty)
     
-    bmaModel.Root
-        (
-            name = "ReconProblem",
-            model = revisedModel,
-            layout = revisedLayout
-        )
+    let resultFile = "../tmp/isolatedIssue.json"
+
+    let model = 
+        bmaModel.Root
+            (
+                name = "ReconProblem",
+                model = revisedModel,
+                layout = revisedLayout
+            )
+    let result = model.JsonValue.ToString()
+    printfn "%s" result
+    Clipboard.SetText(result)
+    result
