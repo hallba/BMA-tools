@@ -20,10 +20,20 @@ let totalEdges = Array.map3 (fun i o n -> (n,i,o,i+o) ) incomingCount outgoingCo
                  |> Array.sortByDescending (fun (_,e,_,_) -> e )
 
 
-
-//printfn "%A" names
-
-for i=0 to 25 do
+//Edge ranks
+printfn "Top connections (sorted by incoming edges)"  
+for i=0 to 10 do
     let n,t,s,e = totalEdges.[i]
     printfn "%-20s\t%d\t(%d\t%d)" names.[n] e t s
+
+//Self loops
+let selfLoops = Array.filter (fun (i,o) -> i=o) edges 
+printfn "Self-loop variables (total = %d)" (Array.length selfLoops)
+Array.iter (fun (v,_) -> printfn "%s" names.[v] ) selfLoops
+
+//Reversible reactions
+let reverse = Array.filter (fun (s,t) -> Array.contains (t,s) edges ) edges
+              |> Array.filter (fun (s,t) -> s < t) //removes duplications
+printfn "Reversible reactions (total = %d)" (Array.length reverse)
+Array.iter (fun (s,t) -> printfn "%s <=> %s" names.[s] names.[t]) reverse
 
