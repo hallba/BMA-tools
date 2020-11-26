@@ -4,7 +4,7 @@ open System.Collections.Generic
 
 type bmaModel = JsonProvider<"../data/models/BMAReconModel_v1_minF.json">
 
-let model = bmaModel.Load("../data/models/BMAReconModel_v1_minF.json")
+let model = bmaModel.Load("../data/models/BMAReconModel251120.json")
 
 let nodes = Seq.map (fun (v:bmaModel.Variable) -> v.Id) model.Model.Variables |> Array.ofSeq
 let names = 
@@ -18,6 +18,20 @@ let outgoingCount = Array.map (fun id -> Array.filter (fun (_,t) -> t=id) edges 
 
 let totalEdges = Array.map3 (fun i o n -> (n,i,o,i+o) ) incomingCount outgoingCount nodes
                  |> Array.sortByDescending (fun (_,e,_,_) -> e )
+
+
+//Duplicate names
+let nameArr = Array.map (fun n -> names.[n]) nodes
+let dupes = nameArr 
+            |> Array.groupBy id
+            |> Array.map ( fun (key, set) -> 
+                if Array.length set > 1
+                then Some (key, Array.length set)
+                else None )
+printfn "Duplicate genes (%d)" <| (Array.length <| Array.filter ((<>) None) dupes)
+Array.iter (fun n -> match n with 
+                     | Some(k,n) -> printfn "%s %d" k n
+                     | None -> () ) dupes
 
 
 //Edge ranks
