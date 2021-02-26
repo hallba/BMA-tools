@@ -1,0 +1,5 @@
+packages/
+data/output/
+.fake
+.ionide
+tmp/
