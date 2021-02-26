@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sbml xmlns:bqbiol="http://biomodels.net/biology-qualifiers/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" layout:required="false" level="3" qual:required="true" version="1"
+    xmlns="http://www.sbml.org/sbml/level3/version1/core"
+    xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1"
+    xmlns:qual="http://www.sbml.org/sbml/level3/version1/qual/version1">
+    <model id="model_id">
+        <listOfCompartments>
+            <compartment constant="true" id="comp1" />
+        </listOfCompartments>
+        <layout:listOfLayouts>
+            <layout:layout id="layout1">
+                <layout:dimensions height="400" width="600" />
+                <layout:listOfAdditionalGraphicalObjects>
+                    <layout:generalGlyph layout:id="sa1_glyph" layout:reference="sa1">
+                        <layout:boundingBox>
+                            <layout:position layout:x="38.0" layout:y="142.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa2_glyph" layout:reference="sa2">
+                        <layout:boundingBox>
+                            <layout:position layout:x="263.0" layout:y="133.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa3_glyph" layout:reference="sa3">
+                        <layout:boundingBox>
+                            <layout:position layout:x="155.0" layout:y="272.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa4_glyph" layout:reference="sa4">
+                        <layout:boundingBox>
+                            <layout:position layout:x="432.0" layout:y="273.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa5_glyph" layout:reference="sa5">
+                        <layout:boundingBox>
+                            <layout:position layout:x="134.0" layout:y="42.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa6_glyph" layout:reference="sa6">
+                        <layout:boundingBox>
+                            <layout:position layout:x="417.0" layout:y="29.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa9_glyph" layout:reference="sa9">
+                        <layout:boundingBox>
+                            <layout:position layout:x="0.0" layout:y="282.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                    <layout:generalGlyph layout:id="sa10_glyph" layout:reference="sa10">
+                        <layout:boundingBox>
+                            <layout:position layout:x="74.0" layout:y="348.0" />
+                            <layout:dimensions layout:height="40.0" layout:width="80.0" />
+                        </layout:boundingBox>
+                    </layout:generalGlyph>
+                </layout:listOfAdditionalGraphicalObjects>
+            </layout:layout>
+        </layout:listOfLayouts>
+        <qual:listOfQualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="false" qual:id="sa1" qual:maxLevel="1" qual:name="A">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s1">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:G&amp;H" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s1" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="false" qual:id="sa2" qual:maxLevel="1" qual:name="B">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s2">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:A&amp;E|C&amp;!D" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s2" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="true" qual:id="sa3" qual:maxLevel="1" qual:name="C">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s3">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:C" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s3" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="false" qual:id="sa4" qual:maxLevel="1" qual:name="D">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s4">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:F" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s4" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="true" qual:id="sa5" qual:maxLevel="1" qual:name="E">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s5">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:E" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s5" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="true" qual:id="sa6" qual:maxLevel="1" qual:name="F">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s6">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:F" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s6" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="true" qual:id="sa9" qual:maxLevel="1" qual:name="G">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s9">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:G" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s9" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+            <qual:qualitativeSpecies qual:compartment="comp1" qual:constant="true" qual:id="sa10" qual:maxLevel="1" qual:name="H">
+                <annotation>
+                    <rdf:RDF>
+                        <rdf:Description rdf:about="#s10">
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:function:H" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                            <bqbiol:isDescribedBy>
+                                <rdf:Bag>
+                                    <rdf:li rdf:resource="urn:casq:cdid:s10" />
+                                </rdf:Bag>
+                            </bqbiol:isDescribedBy>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </annotation>
+            </qual:qualitativeSpecies>
+        </qual:listOfQualitativeSpecies>
+        <qual:listOfTransitions>
+            <qual:transition qual:id="tr_sa1">
+                <qual:listOfInputs>
+                    <qual:input qual:id="tr_sa1_in_0" qual:qualitativeSpecies="sa9" qual:sign="positive" qual:transitionEffect="none" />
+                    <qual:input qual:id="tr_sa1_in_1" qual:qualitativeSpecies="sa10" qual:sign="positive" qual:transitionEffect="none" />
+                </qual:listOfInputs>
+                <qual:listOfOutputs>
+                    <qual:output qual:id="tr_sa1_out" qual:qualitativeSpecies="sa1" qual:transitionEffect="assignmentLevel" />
+                </qual:listOfOutputs>
+                <qual:listOfFunctionTerms>
+                    <qual:defaultTerm qual:resultLevel="0" />
+                    <qual:functionTerm qual:resultLevel="1">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <and />
+                                <apply>
+                                    <eq />
+                                    <ci>sa9</ci>
+                                    <cn type="integer">1</cn>
+                                </apply>
+                                <apply>
+                                    <eq />
+                                    <ci>sa10</ci>
+                                    <cn type="integer">1</cn>
+                                </apply>
+                            </apply>
+                        </math>
+                    </qual:functionTerm>
+                </qual:listOfFunctionTerms>
+            </qual:transition>
+            <qual:transition qual:id="tr_sa2">
+                <qual:listOfInputs>
+                    <qual:input qual:id="tr_sa2_in_0" qual:qualitativeSpecies="sa1" qual:sign="positive" qual:transitionEffect="none" />
+                    <qual:input qual:id="tr_sa2_in_1" qual:qualitativeSpecies="sa5" qual:sign="positive" qual:transitionEffect="none" />
+                    <qual:input qual:id="tr_sa2_in_2" qual:qualitativeSpecies="sa3" qual:sign="positive" qual:transitionEffect="none" />
+                    <qual:input qual:id="tr_sa2_in_3" qual:qualitativeSpecies="sa4" qual:sign="negative" qual:transitionEffect="none" />
+                </qual:listOfInputs>
+                <qual:listOfOutputs>
+                    <qual:output qual:id="tr_sa2_out" qual:qualitativeSpecies="sa2" qual:transitionEffect="assignmentLevel" />
+                </qual:listOfOutputs>
+                <qual:listOfFunctionTerms>
+                    <qual:defaultTerm qual:resultLevel="0" />
+                    <qual:functionTerm qual:resultLevel="1">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <or />
+                                <apply>
+                                    <and />
+                                    <apply>
+                                        <eq />
+                                        <ci>sa1</ci>
+                                        <cn type="integer">1</cn>
+                                    </apply>
+                                    <apply>
+                                        <eq />
+                                        <ci>sa5</ci>
+                                        <cn type="integer">1</cn>
+                                    </apply>
+                                </apply>
+                                <apply>
+                                    <and />
+                                    <apply>
+                                        <eq />
+                                        <ci>sa3</ci>
+                                        <cn type="integer">1</cn>
+                                    </apply>
+                                    <apply>
+                                        <eq />
+                                        <ci>sa4</ci>
+                                        <cn type="integer">0</cn>
+                                    </apply>
+                                </apply>
+                            </apply>
+                        </math>
+                    </qual:functionTerm>
+                </qual:listOfFunctionTerms>
+            </qual:transition>
+            <qual:transition qual:id="tr_sa4">
+                <qual:listOfInputs>
+                    <qual:input qual:id="tr_sa4_in_0" qual:qualitativeSpecies="sa6" qual:sign="positive" qual:transitionEffect="none" />
+                </qual:listOfInputs>
+                <qual:listOfOutputs>
+                    <qual:output qual:id="tr_sa4_out" qual:qualitativeSpecies="sa4" qual:transitionEffect="assignmentLevel" />
+                </qual:listOfOutputs>
+                <qual:listOfFunctionTerms>
+                    <qual:defaultTerm qual:resultLevel="0" />
+                    <qual:functionTerm qual:resultLevel="1">
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <apply>
+                                <eq />
+                                <ci>sa6</ci>
+                                <cn type="integer">1</cn>
+                            </apply>
+                        </math>
+                    </qual:functionTerm>
+                </qual:listOfFunctionTerms>
+            </qual:transition>
+        </qual:listOfTransitions>
+    </model>
+</sbml>
