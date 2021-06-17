@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Types.fs" />
+    <Compile Include="TFGeneration.fs" />
+    <Compile Include="ReadQual.fs" />
+    <Compile Include="WriteBMA.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="libsbmlcsP">
+      <HintPath>..\..\..\..\..\..\..\usr\local\lib\mono\libsbmlcsP\libsbmlcsP.dll</HintPath>
+    </Reference>
+    <Reference Include="BioCheckAnalyzer">
+      <HintPath>..\external\BioCheckAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="BioCheckAnalyzerCommon">
+      <HintPath>..\external\BioCheckAnalyzerCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Z3">
+      <HintPath>..\external\z3\mac-x64\Microsoft.Z3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.1.1">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+    <PackageReference Include="FParsec.CSharp" Version="12.1.0">
+      <GeneratePathProperty></GeneratePathProperty>
+    </PackageReference>
+  </ItemGroup>
+</Project>
